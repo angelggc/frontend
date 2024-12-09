@@ -126,8 +126,10 @@ export function FormAddEditProject({
       <div>
         <Label htmlFor="status">Status</Label>
         <select
-          onChange={(e) => setInputStatus(Boolean(e.target.value))}
-          value={inputStatus ? "true" : "false"}
+          onChange={(e) =>
+            setInputStatus(e.target.value === "true" ? true : false)
+          }
+          value={inputStatus === false ? "false" : "true"}
           id="status"
           className="w-full border-2 rounded h-9 bg-white"
         >
